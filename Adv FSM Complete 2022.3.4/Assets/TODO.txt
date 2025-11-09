@@ -1,0 +1,26 @@
+WE NEED A NEW FLAVOR!!
+
+TODO (week 1)
+- WE NEED FLAVORRRR
+  - You are a cat trying to collect your items (wires, treats, toys)					(done)
+  - The tanks are now hands trying to pick up the cat									(done)
+  - The hands fire smaller hands that slow you down upon being hit						(done)
+  - If the hands touch you, you get caged in the center									(done)
+  - The cat now shoots claws/cat paws in order to fend off the hands					
+- Not overcrowded																		(done)
+- make it so that you cannot stand in one place without taking damage					(done)
+- Restarts if you die or win															(done)
+  - If all items are collected, restart the scene										(done)
+  - When the cat is captured, also restart the scene									(done)
+- Port Heal and Bored state for the hands												(done)
+
+TODO (Week 2 or week 1 if we feel likes it)												(done)
+- Offduty state for the hands															(done)
+  - hands will leave the field and heal for a period of time							(done)
+  - No hands leave if there is only one on the field									(done)
+
+
+TODO to finish
+- Set bullets to paws and hands for the cat and hands respectively						
+- State the objective at the start of the scene											(done)
+- Add more items																		(done)
