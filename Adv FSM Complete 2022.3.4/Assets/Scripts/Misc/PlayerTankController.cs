@@ -16,7 +16,6 @@ public class PlayerTankController : MonoBehaviour
     // slowing on hit
     [SerializeField]
     private float slowedSpeedPercent = .85f;
-    private Timer slowTimer;
     [SerializeField]
     private float slowTime = 2f;
 
@@ -87,13 +86,7 @@ public class PlayerTankController : MonoBehaviour
     // RW
     private void slowSelf()
     {
-        if (slowTimer == null) {
-            slowTimer = Timer.create(gameObject, "Slowdown Timer");
-            slowTimer.oneShot = true;
-            slowTimer.timeout.AddListener(speedBackUp);
-        }
-
-        slowTimer.startTimer(slowTime);
+        
 
         currentSpeed = regularSpeed * slowedSpeedPercent;
     }

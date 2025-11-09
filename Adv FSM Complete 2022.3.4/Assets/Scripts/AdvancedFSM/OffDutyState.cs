@@ -5,7 +5,7 @@ using UnityEngine;
 public class OffDutyState : FSMState
 {
     
-    public Timer exitOffDutyTimer; //cb - creates a timer when this state starts 
+    
     public float offDutyTime = 10f; //cb - time in off duty
     public float vertHeight = 50.0f;
 
@@ -27,34 +27,19 @@ public class OffDutyState : FSMState
 
         NPCTankController controller = npc.GetComponent<NPCTankController>(); 
 
-        if (exitOffDutyTimer == null)
-        {
-            exitOffDutyTimer = Timer.create(npc.gameObject);
-            exitOffDutyTimer.startTimer(offDutyTime);
-        }
+        controller.canTakeDamage = true;
+        controller.health = controller.maxHealth;
+        controller.updateHealthText();
+       
+        
+        Vector3 oldPos = npc.position;
+        oldPos.y = 90f;
+        npc.position = oldPos;
 
-        float percentTimeLeft = exitOffDutyTimer.timeLeft / exitOffDutyTimer.timerLength;
-        if (percentTimeLeft >= .3 && percentTimeLeft <= .6)
-        {
-
-            controller.canTakeDamage = true;
-            controller.health = controller.maxHealth;
-            controller.updateHealthText();
-        }
-
-        if (exitOffDutyTimer.isFinished())
-        {
-            Vector3 oldPos = npc.position;
-            oldPos.y = 90f;
-            npc.position = oldPos;
-
-            GameObject.Destroy(exitOffDutyTimer.gameObject);
-            GameManager.instance.tankReturned();
-            Debug.Log("Switch to Patrol State");
-            controller.SetTransition(Transition.Timeout);
             
-        }
-
+        GameManager.instance.tankReturned();
+        Debug.Log("Switch to Patrol State");
+        controller.SetTransition(Transition.Timeout);
         
     }
 

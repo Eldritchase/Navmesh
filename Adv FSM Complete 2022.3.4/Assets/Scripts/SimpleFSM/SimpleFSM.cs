@@ -11,8 +11,6 @@ public class SimpleFSM : FSM
         Patrol,
         Chase,
         Attack,
-        Dance, // dance state for assignment
-        Camp,
         Rest,
         Dead,
     }
@@ -40,15 +38,8 @@ public class SimpleFSM : FSM
     private float health;
     private int maxHealth;
 
-    // The timer for entering and exiting the dance state (Custom Class)
-    private Timer enterDanceTimer;
-    private Timer exitDanceTimer;
-    private float idleUntilDanceTimeMinimum = 5f;
-    private float idleUntilDanceTimeMaximum = 15f;
-    private float danceTime = 5f;
-
-    private Timer exitCampTimer;
-    private float campTime = 5f;
+    
+    
 
     private float restHealRate = 30f;
 
@@ -104,10 +95,10 @@ public class SimpleFSM : FSM
             case FSMState.Patrol: UpdatePatrolState(); break;
             case FSMState.Chase: UpdateChaseState(); break;
             case FSMState.Attack: UpdateAttackState(); break;
-            case FSMState.Dance: UpdateDanceState(); break;
+            
             case FSMState.Dead: UpdateDeadState(); break;
             case FSMState.Rest: UpdateRestState(); break;
-            case FSMState.Camp: UpdateCampState(); break;
+            
         }
 
         //Update the time
@@ -118,7 +109,7 @@ public class SimpleFSM : FSM
 
         if (health <= 50)
         {
-            destroyTimers();
+            
             curState = FSMState.Rest;
         }
 
@@ -133,25 +124,7 @@ public class SimpleFSM : FSM
     protected void UpdatePatrolState()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-        if (enterDanceTimer == null)
-        {
-            enterDanceTimer = Timer.create(gameObject);
-            enterDanceTimer.startTimer(Random.Range(idleUntilDanceTimeMinimum, idleUntilDanceTimeMaximum));
-        }
-        else if (enterDanceTimer.isFinished())
-        {
-            if (distanceToPlayer >= 300f && distanceToPlayer <= 500f)
-            {
-                curState = FSMState.Camp;
-            }
-            else
-            {
-                Destroy(enterDanceTimer);
-                enterDanceTimer = null;
-                print("Switching from Idle to Dance state");
-                curState = FSMState.Dance;
-            }
-        }
+        
 
         //Find another random patrol point if the current point is reached
         if (Vector3.Distance(transform.position, destPos) <= 100.0f)
@@ -164,8 +137,6 @@ public class SimpleFSM : FSM
         else if (distanceToPlayer <= 300.0f)
         {
             print("Switch to Chase Position");
-            Destroy(enterDanceTimer);
-            enterDanceTimer = null;
             curState = FSMState.Chase;
         }
 
@@ -249,81 +220,14 @@ public class SimpleFSM : FSM
     /// <summary>
     /// Dance state
     /// </summary>
-    protected void UpdateDanceState()
-    {
-        if (exitDanceTimer == null)
-        {
-            exitDanceTimer = Timer.create(gameObject);
-            exitDanceTimer.startTimer(danceTime);
-        }
-        else if (exitDanceTimer.isFinished())
-        {
-            destroyTimers();
-            print("Switching from Dance to Patrol state");
-            curState = FSMState.Patrol;
-            return;
-        }
-        
-        if (Vector3.Distance(transform.position, playerTransform.position) <= 300.0f)
-        {
-            destroyTimers();
-            print("Switch to Chase Position");
-            curState = FSMState.Chase;
-            return;
-        }
-
-        setTankColor(Color.magenta);
-
-        // TODO dance code
-        if (exitDanceTimer.isFinished() == false){
-            turret.transform.Rotate(0,90*Time.deltaTime,0);
-            //transform.Rotate(0,90*Time.deltaTime,0); // if you want the tank to rotate too
-        }
-
-    }
+    
 
     /// <summary>
     /// Camp state
     /// </summary>
-    protected void UpdateCampState()
-    {
-        if (exitCampTimer == null)
-        {
-            exitCampTimer = Timer.create(gameObject);
-            exitCampTimer.startTimer(campTime);
-        }
-        else if (exitCampTimer.isFinished())
-        {
-            destroyTimers();
-            print("Switching from Camp to Patrol state");
-            curState = FSMState.Patrol;
-            return;
-        }
+    
 
-        if (Vector3.Distance(transform.position, playerTransform.position) <= 300.0f)
-        {
-            destroyTimers();
-            print("Switch to Chase Position");
-            curState = FSMState.Chase;
-            return;
-        }
-
-        setTankColor(Color.black);
-    }
-
-    private void destroyTimers()
-    {
-        if (exitCampTimer != null)
-        {
-            Destroy(exitCampTimer);
-            exitCampTimer = null;
-        }
-        if (exitDanceTimer != null)
-        {
-            Destroy(exitDanceTimer);
-            exitDanceTimer = null;
-        }
-    }
+   
 
     /// <summary>
     /// Rest state

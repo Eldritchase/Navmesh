@@ -118,8 +118,7 @@ public class NPCTankController : AdvancedFSM
 
         PatrolState patrol = new PatrolState(waypoints);
         patrol.AddTransition(Transition.SawPlayer, FSMStateID.Chasing);
-        patrol.AddTransition(Transition.Bored, FSMStateID.Dancing);
-        patrol.AddTransition(Transition.BoredSensePlayer, FSMStateID.Camping);
+        
         patrol.AddTransition(Transition.Damaged, FSMStateID.Resting);
         patrol.AddTransition(Transition.GoToOffDuty, FSMStateID.OffDuty);
         patrol.AddTransition(Transition.NoHealth, FSMStateID.Dead);
@@ -136,15 +135,6 @@ public class NPCTankController : AdvancedFSM
         attack.AddTransition(Transition.Damaged, FSMStateID.Resting);
         attack.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 
-        DanceState dance = new DanceState(waypoints);
-        dance.AddTransition(Transition.Damaged, FSMStateID.Resting);
-        dance.AddTransition(Transition.Timeout, FSMStateID.Patrolling);
-        dance.AddTransition(Transition.NoHealth, FSMStateID.Dead);
-
-        CampState camp = new CampState(waypoints);
-        camp.AddTransition(Transition.Damaged, FSMStateID.Resting);
-        camp.AddTransition(Transition.Timeout, FSMStateID.Patrolling);
-        camp.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 
         RestState rest = new RestState(waypoints);
         rest.AddTransition(Transition.NoHealth, FSMStateID.Dead);
@@ -160,8 +150,7 @@ public class NPCTankController : AdvancedFSM
         AddFSMState(patrol);
         AddFSMState(chase);
         //AddFSMState(attack);
-        AddFSMState(dance);
-        AddFSMState(camp);
+        
         AddFSMState(rest);
         AddFSMState(offDuty);
         AddFSMState(dead);

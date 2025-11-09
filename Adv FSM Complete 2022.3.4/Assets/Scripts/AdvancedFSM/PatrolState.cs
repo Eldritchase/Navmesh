@@ -4,7 +4,7 @@ using System.Collections;
 public class PatrolState : FSMState
 {
 
-    private Timer danceOutTimer;
+    
     private float timeUntilDanceCampState;
     private float offDutyElapsedTime;
     private int timesEnteredOffDuty = 0;
@@ -28,28 +28,9 @@ public class PatrolState : FSMState
         NPCTankController controller = npc.GetComponent<NPCTankController>();
 
         // RW
-        if (danceOutTimer == null)
-        {
-            danceOutTimer = Timer.create(npc.gameObject, "Dance Timer");
-            danceOutTimer.oneShot = true;
-            danceOutTimer.startTimer(timeUntilDanceCampState);
-        }
+        
 
         float playerDistance = Vector3.Distance(npc.position, player.position);
-
-        if (danceOutTimer.isFinished())
-        {
-            if (playerDistance >= 300f && playerDistance <= 500f)
-            {
-                Debug.Log("Transitioning to Camp State");
-                transitionOut(npc, Transition.BoredSensePlayer);
-            }
-            else { 
-                Debug.Log("Transitioning to Dance State");
-                transitionOut(npc, Transition.Bored);
-            }
-
-        }
 
         // RW                           if the elapsed time is greater than the time for us to go offduty (and how much we have)
         if (GameManager.tanksRemaining > 1 && controller.elapsedTime >= (timesEnteredOffDuty+1) * offDutyElapsedTime)
@@ -94,9 +75,6 @@ public class PatrolState : FSMState
     // RW
     private void transitionOut(Transform npc, Transition exitTransition)
     {
-        if (npc.GetComponent<NPCTankController>().SetTransition(exitTransition))
-        {
-            GameObject.Destroy(danceOutTimer.gameObject);
-        }
+        
     }
 }
