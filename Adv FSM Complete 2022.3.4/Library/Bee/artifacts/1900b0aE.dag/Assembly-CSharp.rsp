@@ -361,7 +361,6 @@
 "Assets/Scripts/Misc/PlayerTankController.cs"
 "Assets/Scripts/SimpleFSM/FSM.cs"
 "Assets/Scripts/SimpleFSM/SimpleFSM.cs"
-"Assets/Scripts/Util/Timer.cs"
 -langversion:9.0
 /deterministic
 /optimize+
