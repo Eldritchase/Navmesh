@@ -38,7 +38,7 @@ public class PatrolState : FSMState
             Debug.Log("Transitioning to OffDuty");
             GameManager.instance.tankDied();
             timesEnteredOffDuty += 1;
-            transitionOut(npc, Transition.GoToOffDuty);
+            npc.GetComponent<NPCTankController>().SetTransition(Transition.GoToOffDuty);
             return;
         }
         
@@ -48,7 +48,7 @@ public class PatrolState : FSMState
         {
             //2. Since the distance is near, transition to chase state
             Debug.Log("Switch to Chase State");
-            transitionOut(npc, Transition.SawPlayer);
+            npc.GetComponent<NPCTankController>().SetTransition(Transition.SawPlayer);
         }
 
     }
@@ -73,8 +73,5 @@ public class PatrolState : FSMState
     }
 
     // RW
-    private void transitionOut(Transform npc, Transition exitTransition)
-    {
-        
-    }
+    
 }

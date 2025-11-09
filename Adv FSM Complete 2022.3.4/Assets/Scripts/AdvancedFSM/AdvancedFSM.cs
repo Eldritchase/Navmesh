@@ -31,8 +31,6 @@ public enum FSMStateID //cb
     Patrolling,
     Chasing,
     Attacking,
-    Dancing,
-    Camping,
     Resting,
     OffDuty,
     Dead,
