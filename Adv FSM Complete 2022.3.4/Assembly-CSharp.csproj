@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\AdvancedFSM\RestState.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\PatrolState.cs" />
     <Compile Include="Assets\Scripts\Misc\GameManager.cs" />
+    <Compile Include="Assets\MovingObject.cs" />
     <Compile Include="Assets\Scripts\SimpleFSM\SimpleFSM.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\DeadState.cs" />
     <Compile Include="Assets\Scripts\Misc\Bullet.cs" />
