@@ -11,7 +11,7 @@ public class MovingObject : MonoBehaviour
     public Transform[] points;
     private int i;
 
-    public NavMeshSurface navMeshSurface;
+
 
 
     // Start is called before the first frame update
@@ -38,20 +38,6 @@ public class MovingObject : MonoBehaviour
             
         }
 
-        if (navMeshSurface != null)
-        {
-            navMeshSurface.BuildNavMesh();
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        collision.transform.SetParent(transform);
-
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        collision.transform.SetParent(null);
-
+    
     }
 }
