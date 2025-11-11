@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
 
 public class ChaseState : FSMState
 {
+
+    private NavMeshPath path = new NavMeshPath();
     
     public ChaseState(Transform[] wp)
     {
@@ -31,7 +34,7 @@ public class ChaseState : FSMState
             npc.GetComponent<NPCTankController>().SetTransition(Transition.ReachPlayer);
         }
         //Go back to patrol is it become too far
-        else if (dist >= 400.0f)
+        else if (dist >= 600.0f)
         {
             Debug.Log("Switch to Patrol state");
             npc.GetComponent<NPCTankController>().SetTransition(Transition.LostPlayer);
@@ -40,16 +43,17 @@ public class ChaseState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
+        NavMeshAgent agent = npc.GetComponent<NavMeshAgent>();
+        agent.destination = player.position;
+
         NPCTankController controller = npc.GetComponent<NPCTankController>();
         //Rotate to the target point
-        destPos = player.position;
 
         Quaternion targetRotation = Quaternion.LookRotation(destPos - npc.position);
         npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
 
-        //Go Forward
-        npc.transform.Translate(Vector3.forward * Time.deltaTime * curSpeed);
         controller.setTankColor(Color.yellow);
         controller.ShootBullet();
     }
+
 }
