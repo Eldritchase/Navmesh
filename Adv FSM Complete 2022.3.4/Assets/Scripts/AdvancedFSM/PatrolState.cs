@@ -46,7 +46,7 @@ public class PatrolState : FSMState
             nextDestination = Vector3.zero;
             return;
         }
-        
+
 
         //1. Check the distance with player tank
         if (playerDistance <= 300.0f)

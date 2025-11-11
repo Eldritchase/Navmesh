@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
 
 	private int itemsCollected = 0;
 	private int totalItems = 0;
+    public GameObject links;
 
-	[SerializeField]
+    [SerializeField]
 	private EndScreenCanvas endCanvas;
 	
 	public static GameManager instance {  get; private set; }
@@ -44,7 +45,14 @@ public class GameManager : MonoBehaviour
 	void Update () 
     {
         Time.timeScale = gameSpeed;
-	}
+        // IY                           When there is only one tank left, turn on the shortcuts in the center. (i think this is the best place to put this?)
+        if (tanksRemaining == 1)
+        {
+            Debug.Log("Turning on shortcuts");
+            links.SetActive(true);
+            return;
+        }
+    }
 
     // RW
     public void addCollectedItem()
