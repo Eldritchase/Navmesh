@@ -24,9 +24,9 @@ public class MovingObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, points[i].position) < 0.02f)
+        if (Vector3.Distance(transform.position, points[i].position) < 0.02f)
         {
             i++;
 
