@@ -14,11 +14,14 @@ public class PatrolState : FSMState
         waypoints = wp;
         stateID = FSMStateID.Patrolling;
 
-        curRotSpeed = 1.0f;
-        curSpeed = 100.0f;
+        //curRotSpeed = 1.0f;
+        //curSpeed = 10.0f;
+
+
 
         // sets up for reason and act states
         FindNextPoint();
+       
         timeUntilDanceCampState = Random.Range(5f, 15f);
         offDutyElapsedTime = Random.Range(30f, 90f);
     }
@@ -55,19 +58,27 @@ public class PatrolState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
+        NPCTankController controller = npc.GetComponent<NPCTankController>(); //CB
+
+        //navmesh movment
+        controller.agent.updateRotation = true;
+        controller.agent.SetDestination(destPos);
+
+        //Debug.Log(controller.agent.destination);
+
         //1. Find another random patrol point if the current point is reached
-        if (Vector3.Distance(npc.position, destPos) <= 100.0f)
+        if (Vector3.Distance(npc.position, destPos) <= 10.0f)
         {
             Debug.Log("Reached to the destination point, calculating the next point");
             FindNextPoint();
         }
 
-        //2. Rotate to the target point
-        Quaternion targetRotation = Quaternion.LookRotation(destPos - npc.position);
-        npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
+        //2. Rotate to the target point - deprecated due to navmesh - cb
+        //Quaternion targetRotation = Quaternion.LookRotation(destPos - npc.position);
+        //npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
 
-        //3. Go Forward
-        npc.Translate(Vector3.forward * Time.deltaTime * curSpeed);
+        //3. Go Forward - deprecated cause of navmesh
+        //npc.Translate(Vector3.forward * Time.deltaTime * curSpeed);
 
         npc.GetComponent<NPCTankController>().setTankColor(Color.blue);
     }

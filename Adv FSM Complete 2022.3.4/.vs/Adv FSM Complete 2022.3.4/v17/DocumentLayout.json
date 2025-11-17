@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|c:\\users\\maria\\onedrive\\documents\\github\\navmesh\\adv fsm complete 2022.3.4\\assets\\movingobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|solutionrelative:assets\\movingobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\assets\\scripts\\advancedfsm\\chasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\advancedfsm\\chasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\assets\\scripts\\advancedfsm\\npctankcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\advancedfsm\\npctankcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|c:\\users\\maria\\onedrive\\documents\\github\\navmesh\\adv fsm complete 2022.3.4\\assets\\scripts\\advancedfsm\\fsmstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\advancedfsm\\fsmstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|c:\\users\\maria\\onedrive\\documents\\github\\navmesh\\adv fsm complete 2022.3.4\\assets\\movingobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|solutionrelative:assets\\movingobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5392DD7B-9111-8D2F-BF12-CB0FA53FFAC5}|Assembly-CSharp.csproj|C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\assets\\scripts\\advancedfsm\\offdutystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,64 +34,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FSMState.cs",
+              "DocumentMoniker": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\FSMState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AdvancedFSM\\FSMState.cs",
+              "ToolTip": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\FSMState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AdvancedFSM\\FSMState.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAowHQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:54:31.888Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MovingObject.cs",
               "DocumentMoniker": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\MovingObject.cs",
               "RelativeDocumentMoniker": "Assets\\MovingObject.cs",
               "ToolTip": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\MovingObject.cs",
               "RelativeToolTip": "Assets\\MovingObject.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAA0wCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-10T16:03:17.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "NPCTankController.cs",
               "DocumentMoniker": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\NPCTankController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AdvancedFSM\\NPCTankController.cs",
               "ToolTip": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\NPCTankController.cs",
               "RelativeToolTip": "Assets\\Scripts\\AdvancedFSM\\NPCTankController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAawHoAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAowCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T22:45:07.86Z"
+              "WhenOpened": "2025-11-09T22:45:07.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PatrolState.cs",
               "DocumentMoniker": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\PatrolState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AdvancedFSM\\PatrolState.cs",
               "ToolTip": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\PatrolState.cs",
               "RelativeToolTip": "Assets\\Scripts\\AdvancedFSM\\PatrolState.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwDwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T22:43:18.984Z"
+              "WhenOpened": "2025-11-09T22:43:18.984Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ChaseState.cs",
               "DocumentMoniker": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\ChaseState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AdvancedFSM\\ChaseState.cs",
               "ToolTip": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\ChaseState.cs",
               "RelativeToolTip": "Assets\\Scripts\\AdvancedFSM\\ChaseState.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwBkAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T22:55:47.076Z"
+              "WhenOpened": "2025-11-09T22:55:47.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "OffDutyState.cs",
               "DocumentMoniker": "C:\\Users\\maria\\OneDrive\\Documents\\GitHub\\Navmesh\\Adv FSM Complete 2022.3.4\\Assets\\Scripts\\AdvancedFSM\\OffDutyState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AdvancedFSM\\OffDutyState.cs",

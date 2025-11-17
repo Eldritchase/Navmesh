@@ -1,7 +1,8 @@
-using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements;
 using TMPro;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 
 public class NPCTankController : AdvancedFSM
@@ -33,9 +34,13 @@ public class NPCTankController : AdvancedFSM
     //OffDuty Timer  - Depricated
     //public Timer enterOffDutyTimer; //cb - creates a timer to enter game
     //public float enterOffDutyTime;
-    
+
 
     //Initialize the Finite state machine for the NPC tank
+
+    //getting the components for navmesh
+    public NavMeshAgent agent;
+
     protected override void Initialize()
     {
         health = 150.0f;
@@ -58,13 +63,19 @@ public class NPCTankController : AdvancedFSM
         turret = gameObject.transform.GetChild(0).transform;
         bulletSpawnPoint = turret.GetChild(0).transform;
 
-  
+
 
         //if (enterOffDutyTimer == null)
         //{
         //    enterOffDutyTimer = Timer.create(gameObject);
         //    enterOffDutyTimer.startTimer(enterOffDutyTime);
         //}
+
+
+        // get the nav mesh component  cb
+
+        agent = GetComponent<NavMeshAgent>();
+
 
         //Start Doing the Finite State Machine
         ConstructFSM();

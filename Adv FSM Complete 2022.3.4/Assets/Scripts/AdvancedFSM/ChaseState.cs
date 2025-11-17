@@ -31,7 +31,7 @@ public class ChaseState : FSMState
             npc.GetComponent<NPCTankController>().SetTransition(Transition.ReachPlayer);
         }
         //Go back to patrol is it become too far
-        else if (dist >= 400.0f)
+        else if (dist >= 700.0f)
         {
             Debug.Log("Switch to Patrol state");
             npc.GetComponent<NPCTankController>().SetTransition(Transition.LostPlayer);
@@ -44,11 +44,16 @@ public class ChaseState : FSMState
         //Rotate to the target point
         destPos = player.position;
 
-        Quaternion targetRotation = Quaternion.LookRotation(destPos - npc.position);
-        npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
+   
+        //navmesh movment
+        controller.agent.updateRotation = true;
+        controller.agent.SetDestination(destPos);
+
+        //Quaternion targetRotation = Quaternion.LookRotation(destPos - npc.position);
+        //npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
 
         //Go Forward
-        npc.transform.Translate(Vector3.forward * Time.deltaTime * curSpeed);
+        //npc.transform.Translate(Vector3.forward * Time.deltaTime * curSpeed);
         controller.setTankColor(Color.yellow);
         controller.ShootBullet();
     }
