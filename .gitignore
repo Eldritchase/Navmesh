@@ -15,8 +15,8 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 
-Library
-library
+Library/
+library/
 Temp
 temp
 Obj

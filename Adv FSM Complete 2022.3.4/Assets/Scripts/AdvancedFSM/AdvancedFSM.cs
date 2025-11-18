@@ -34,6 +34,8 @@ public enum FSMStateID //cb
     Resting,
     OffDuty,
     Dead,
+    Camping,
+    Dancing
 }
 
 public class AdvancedFSM : FSM 

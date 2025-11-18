@@ -65,12 +65,15 @@
     <Compile Include="Assets\Scripts\AdvancedFSM\RestState.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\PatrolState.cs" />
     <Compile Include="Assets\Scripts\Misc\GameManager.cs" />
+    <Compile Include="Assets\Scripts\AdvancedFSM\CampState.cs" />
     <Compile Include="Assets\MovingObject.cs" />
     <Compile Include="Assets\Scripts\SimpleFSM\SimpleFSM.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\DeadState.cs" />
+    <Compile Include="Assets\Scripts\Util\Timer.cs" />
     <Compile Include="Assets\Scripts\Misc\Bullet.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\FSMState.cs" />
     <Compile Include="Assets\resources\Prefabs\UI\EndScreenCanvas.cs" />
+    <Compile Include="Assets\Scripts\AdvancedFSM\DanceState.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\NPCTankController.cs" />
     <Compile Include="Assets\Scripts\AdvancedFSM\AttackState.cs" />
     <Compile Include="Assets\Scripts\ItemCollection\CatItem.cs" />

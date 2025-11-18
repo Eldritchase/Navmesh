@@ -32,7 +32,6 @@ public class PatrolState : FSMState
         NPCTankController controller = npc.GetComponent<NPCTankController>();
 
         // RW
-        
 
         float playerDistance = Vector3.Distance(npc.position, player.position);
 
@@ -62,10 +61,10 @@ public class PatrolState : FSMState
     public override void Act(Transform player, Transform npc)
     {
         //Debug.Log(destPos);
+        NavMeshAgent agent = npc.GetComponent<NavMeshAgent>();
         //1. Find another random patrol point if the current point is reached
-        if (nextDestination == Vector3.zero || Vector3.Distance(npc.position, nextDestination) <= 200.0f)//(pathWaypoints == null || pathWaypoints.Length < 1) ||  || pathWaypoints.Length - 3 < currentPathIndex)
+        if (nextDestination == Vector3.zero || Vector3.Distance(npc.position, agent.destination) <= 200.0f)//(pathWaypoints == null || pathWaypoints.Length < 1) ||  || pathWaypoints.Length - 3 < currentPathIndex)
         {
-            NavMeshAgent agent = npc.GetComponent<NavMeshAgent>();
             Debug.Log("Reached to the destination point, calculating the next point");
             recalculatePath(agent, getRandomNextPositionOnMesh(npc));
         }
@@ -102,10 +101,12 @@ public class PatrolState : FSMState
     // RW - Thank you to this post for this code and understanding https://discussions.unity.com/t/how-to-get-a-random-point-on-navmesh/73440
     private Vector3 getRandomNextPositionOnMesh(Transform tank)
     {
-        Vector3 randomDirection = Random.insideUnitCircle * 900f;
-        randomDirection += tank.position;
+        Vector2 randomDirection = Random.insideUnitCircle * 5000f;
+        //Debug.Log("Chosen random direction: " + randomDirection);
+        Vector3 randomDirection3 = new Vector3(randomDirection.x, 0, randomDirection.y);
+        randomDirection3 += tank.position;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, 900f, 1);
+        NavMesh.SamplePosition(randomDirection3, out hit, 5000f, 1);
         return hit.position;
     }
 
